@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="UTF-8">
+        <!-- fonts -->
+        <link rel="stylesheet" href="static/font/glyphicons-halflings-regular.svg" th:href="@{/font/glyphicons-halflings-regular.svg}" />
+        <link rel="stylesheet" href="static/font/glyphicons-halflings-regular.woff" th:href="@{/font/glyphicons-halflings-regular.woff}" />
+        <link rel="stylesheet" href="static/font/glyphicons-halflings-regular.ttf" th:href="@{/font/glyphicons-halflings-regular.ttf}" />
+        <link rel="stylesheet" href="static/font/glyphicons-halflings-regular.eot" th:href="@{/font/glyphicons-halflings-regular.eot}" />
+    <!-- /**/ fonts -->
+       
+    </head>
+    <body>
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+            <div class="container">
+            
+         
+           		 
+<div class="navbar-header">
+       				 <img src="/images/logodemocnss.png"  height="60" width="180" alt="CNSS NIGER"/>
+      				  
+      				 <!-- Source création du logo http://www6.fr.flamingtext.com/ -->
+</div>
+           		 
+<ul class="nav   nav-pills nav-fill navbar-nav navbar-right">
+
+ <li class="nav-item ">
+    <a class="navbar-brand  active" href="/home">Accueil</a>
+  </li>
+  
+
+
+  
+  <li class="nav-item">
+    <a class="navbar-brand " href="/registration">Admin</a>
+  </li>
+  
+ <!--  <div th:if="${statusRole eq 'ADMIN'}">
+			<li class="nav-item">
+    <a class="navbar-brand " href="/registration">Admin</a>
+  </li>              
+   </div> -->
+			           
+			           
+   <li class="nav-item">
+  <form th:action="@{/logout}" method="get">
+			<button class="btn btn-md btn-danger btn-block" name="registration"
+				type="Submit">Logout</button>
+		</form> 
+ </li>
+ 
+</ul>
+           		 
+           		
+           
+            
+            </div>
+        </nav>
+        
+
+        
+    </body>
+</html>
