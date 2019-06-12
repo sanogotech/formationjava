@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.3.0 
+Voir <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2019.06.12 à 05:48:05 AM UTC 
+
+  -->
+  <bindings xmlns:tns="http://helloservice.tutorial.jakarta/" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="jakarta.tutorial.helloservice.endpoint"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:getClient">
+      <class ref="jakarta.tutorial.helloservice.endpoint.GetClient"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:getClientResponse">
+      <class ref="jakarta.tutorial.helloservice.endpoint.GetClientResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sayHello">
+      <class ref="jakarta.tutorial.helloservice.endpoint.SayHello"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:sayHelloResponse">
+      <class ref="jakarta.tutorial.helloservice.endpoint.SayHelloResponse"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:client">
+      <class ref="jakarta.tutorial.helloservice.endpoint.Client"/>
+    </bindings>
+  </bindings>
+</bindings>

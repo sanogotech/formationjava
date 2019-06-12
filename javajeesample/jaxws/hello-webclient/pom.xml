@@ -24,10 +24,35 @@
         <artifactId>jaxws</artifactId>
         <version>8.1-SNAPSHOT</version>
     </parent>
+	
+	
+
     
     <build>
         <finalName>${project.artifactId}</finalName>
+
+        <sourceDirectory>src/main/java</sourceDirectory>
+		
         <plugins>
+		
+			
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
@@ -42,7 +67,7 @@
                             <wsdlFiles>
                                 <wsdlFile>HelloService.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <wsdlLocation>http://localhost:8080/helloservice/HelloService?WSDL</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/helloservice-war/HelloService?WSDL</wsdlLocation>
                             <packageName>jakarta.tutorial.helloservice.endpoint</packageName>
                         </configuration>
                         <phase>generate-sources</phase>

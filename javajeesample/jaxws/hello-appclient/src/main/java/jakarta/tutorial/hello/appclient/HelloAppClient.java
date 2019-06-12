@@ -12,10 +12,11 @@ package jakarta.tutorial.hello.appclient;
 
 import jakarta.tutorial.helloservice.endpoint.HelloService;
 import javax.xml.ws.WebServiceRef;
+import jakarta.tutorial.helloservice.endpoint.Client;
 
 public class HelloAppClient {
     @WebServiceRef(wsdlLocation = 
-      "http://localhost:8080/helloservice-war/HelloService?WSDL")
+      "http://localhost:8080/hello/HelloService?WSDL")
     private static HelloService service;
 
     /**
@@ -23,11 +24,19 @@ public class HelloAppClient {
      */
     public static void main(String[] args) {
        System.out.println(sayHello("world"));
+	   System.out.println(getClient("client").getNom());
     }
 
     private static String sayHello(java.lang.String arg0) {
         jakarta.tutorial.helloservice.endpoint.Hello port = 
                 service.getHelloPort();
         return port.sayHello(arg0);
+    }
+	
+	
+	  private static  Client getClient(String name) {
+        jakarta.tutorial.helloservice.endpoint.Hello port = 
+                service.getHelloPort();
+        return port.getClient(name);
     }
 }

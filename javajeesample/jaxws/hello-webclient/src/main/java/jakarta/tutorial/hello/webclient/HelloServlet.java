@@ -11,6 +11,7 @@
 package jakarta.tutorial.hello.webclient;
 
 import jakarta.tutorial.helloservice.endpoint.HelloService;
+import jakarta.tutorial.helloservice.endpoint.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,11 +21,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
 
-@WebServlet(name="HelloServlet", urlPatterns={"/HelloServlet"})
+
+@WebServlet(name="servlethello", urlPatterns={"/hellows"}, loadOnStartup = 1)
 public class HelloServlet extends HttpServlet {
+	
+	/*
     @WebServiceRef(wsdlLocation = 
       "http://localhost:8080/helloservice-war/HelloService?WSDL")
-    private HelloService service;
+    private HelloService service;*/
+	private HelloService service = new HelloService();
    
     /** 
      * Processes requests for both HTTP <code>GET</code>
@@ -48,6 +53,7 @@ public class HelloServlet extends HttpServlet {
             out.println("<h1>Servlet HelloServlet at " + 
                 request.getContextPath () + "</h1>");
             out.println("<p>" + sayHello("world") + "</p>");
+			out.println("<p>" +  getClient("testname").getPrenom()+ "</p>");
             out.println("</body>");
             out.println("</html>");
             
@@ -94,5 +100,11 @@ public class HelloServlet extends HttpServlet {
         jakarta.tutorial.helloservice.endpoint.Hello port = 
                 service.getHelloPort();
         return port.sayHello(arg0);
+    }
+	
+	private  Client getClient(String name) {
+        jakarta.tutorial.helloservice.endpoint.Hello port = 
+                service.getHelloPort();
+        return port.getClient(name);
     }
 }

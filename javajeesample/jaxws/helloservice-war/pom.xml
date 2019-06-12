@@ -24,6 +24,8 @@
         <artifactId>jaxws</artifactId>
         <version>8.1-SNAPSHOT</version>
     </parent>
+	
+
 
     <build>
         <plugins>
@@ -45,6 +47,7 @@
                     </execution>
                 </executions>
             </plugin>
+           
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
                 <artifactId>cargo-maven2-plugin</artifactId>
@@ -58,6 +61,7 @@
                     </deployables>
                 </configuration>
             </plugin>
+           
         </plugins>
     </build>
 

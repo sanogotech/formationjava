@@ -27,9 +27,9 @@
     </properties>
     
     <modules>
-        <module>helloservice-war</module>
+     <module>helloservice-war</module>
         <module>hello-appclient</module>
-        <module>hello-webclient</module>
+     <module>hello-webclient</module>
     </modules>
     
     <build>

@@ -12,6 +12,7 @@ package jakarta.tutorial.helloservice;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;
+import jakarta.tutorial.helloservice.model.Client;
 
 @WebService
 public class Hello {
@@ -24,5 +25,14 @@ public class Hello {
     @WebMethod
     public String sayHello(String name) {
         return message + name + ".";
+    }
+	
+	@WebMethod
+    public Client getClient(String name) {
+		Client client = new Client();
+		client.setPrenom("Souleymane");
+		client.setNom("SANOGO");
+		
+        return client;
     }
 }
