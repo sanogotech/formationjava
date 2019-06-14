@@ -91,9 +91,12 @@
                             <wsdlDirectory>${project.basedir}/src/main/resources/wsdl</wsdlDirectory>
                             <wsdlFiles>
                                 <wsdlFile>HelloDescription.wsdl</wsdlFile>
+								<wsdlFile>BookDescription.wsdl</wsdlFile>
                             </wsdlFiles>
-							
+							<!--
+							http://binta:8080/helloservice-war/bookWeb?wsdl
                             <wsdlLocation>http://localhost:8080/helloservice-war/HelloService?WSDL</wsdlLocation>
+							-->
                             <packageName>jakarta.tutorial.helloservice.endpoint</packageName>
                         </configuration>
                         <phase>generate-sources</phase>
