@@ -12,9 +12,17 @@ import com.macrosoftas.archijee.model.Role;
 import com.macrosoftas.archijee.model.User;
 import com.macrosoftas.archijee.repository.UserRepository;
 import com.macrosoftas.archijee.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
+import java.util.List;
+
 
 @SpringBootApplication
 public class ArchiJEEApplication implements CommandLineRunner{
+	
+	private static final Logger logger = LoggerFactory.getLogger(ArchiJEEApplication.class);
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -24,9 +32,14 @@ public class ArchiJEEApplication implements CommandLineRunner{
 
 	public static void main(String[] args) {
 		SpringApplication.run(ArchiJEEApplication.class, args);
+		logger.info("Start Archi Application ...");
 	}
 
 	public void run(String... args) throws Exception {
+		
+		List<String> userdata = Arrays.asList("ADMIN", "ADMIN", "admin@cnss.ne","admin2017");
+        logger.debug("**** Create default user  {}", userdata);
+		
 		User user = new User();
 		user.setName("ADMIN");
 		user.setLastName("ADMIN");
