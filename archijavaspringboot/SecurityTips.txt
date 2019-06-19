@@ -1,0 +1,5 @@
+
+
+hasAuthory(ADMIN) vs hasRole (ROLE_ADMIN)
+
+Disable loginform for  /api/*  rest api 

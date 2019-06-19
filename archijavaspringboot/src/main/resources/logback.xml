@@ -30,8 +30,8 @@
     </appender>
 
 	
-	<logger name="org.springframework" level="ERROR"/>
-	<logger name="org.hibernate.stat" level="DEBUG"/>
+	<!-- <logger name="org.springframework" level="ERROR"/> -->
+	<!-- <logger name="org.hibernate.stat" level="DEBUG"/> -->
 	
 	
     <logger name="com.macrosoftas" level="debug" additivity="false">
