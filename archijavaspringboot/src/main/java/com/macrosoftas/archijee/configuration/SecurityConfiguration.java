@@ -31,6 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.passwordEncoder(bCryptPasswordEncoder);
 	}
 
+	/*
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
@@ -45,11 +46,38 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.defaultSuccessUrl("/home")
 				.usernameParameter("email")
 				.passwordParameter("password")
-				.and().logout()
+				.and()
+				.logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.logoutSuccessUrl("/").and().exceptionHandling()
 				.accessDeniedPage("/access-denied");
-	}
+	}*/
+	
+	/*
+	@Override
+	//REST ENDPOINT  //HTTP Basic authentication
+    protected void configure(HttpSecurity http) throws Exception {
+
+			http
+                .authorizeRequests()
+                .antMatchers("/api/**").hasAuthority("ADMIN").anyRequest()
+				.authenticated()
+                .and()
+                .csrf().disable()
+                .formLogin().disable();
+    }*/
+	
+	@Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+            .antMatchers("/api/livres").permitAll()
+            .antMatchers("/api/users").hasAuthority("ADMIN")
+            .anyRequest().fullyAuthenticated()
+            .and().httpBasic()
+            .and().csrf().disable();
+    }
+	
+	
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {

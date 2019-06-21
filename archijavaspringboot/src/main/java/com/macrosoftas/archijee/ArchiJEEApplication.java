@@ -37,13 +37,13 @@ public class ArchiJEEApplication implements CommandLineRunner{
 
 	public void run(String... args) throws Exception {
 		
-		List<String> userdata = Arrays.asList("ADMIN", "ADMIN", "admin@cnss.ne","admin2017");
+		List<String> userdata = Arrays.asList("ADMIN", "ADMIN", "admin@test.com","admin2017");
         logger.debug("**** Create default user  {}", userdata);
 		
 		User user = new User();
 		user.setName("ADMIN");
 		user.setLastName("ADMIN");
-		user.setEmail("admin@cnss.ne");
+		user.setEmail("admin@test.com");
 		//BCryptPasswordEncoder bCryptPasswordEncoderLocal = new BCryptPasswordEncoder();
 		//String encodepwd = bCryptPasswordEncoderLocal.encode("admin2017");
 		//user.setPassword(encodepwd);
