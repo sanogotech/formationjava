@@ -1,5 +1,22 @@
 
 
+***  Test en Mode  DEV
+
+0. mvn  spring-boot:run
+
+1. http://localhost:8088
+
+user/pwd :    admin@test.com / admin2017
+
+2. http://localhost:8088/h2web
+
+url :  jdbc:h2:mem:contactmanager
+user: sa
+pwd:
+
+Pour voir la base en mémoire.
+
+
 ** Spring DATA REST 
 
 -  Add   spring data rest starter with spring data : pom.xml
