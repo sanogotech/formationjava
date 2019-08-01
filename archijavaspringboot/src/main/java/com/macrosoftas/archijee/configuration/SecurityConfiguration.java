@@ -31,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.passwordEncoder(bCryptPasswordEncoder);
 	}
 
-	/*
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
@@ -40,42 +40,41 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/").permitAll()
 				.antMatchers("/login").permitAll()
 				.antMatchers("/registration").permitAll()
-				.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
+				.antMatchers("/admin/**","/h2web/**").hasAuthority("ADMIN").anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
 				.loginPage("/login").failureUrl("/login?error=true")
 				.defaultSuccessUrl("/home")
 				.usernameParameter("email")
 				.passwordParameter("password")
 				.and()
+				.headers().frameOptions().disable()
+				.and()
 				.logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 				.logoutSuccessUrl("/").and().exceptionHandling()
 				.accessDeniedPage("/access-denied");
-	}*/
+				
+				/**
+				Allow all requests to the root url (“/”) 
+				Allow all requests to the H2 database console url (“/h2web/*”) 
+				Disable CSRF protection
+				Disable X-Frame-Options in Spring Security 
+				
+				**/
+	}
 	
-	/*
-	@Override
-	//REST ENDPOINT  //HTTP Basic authentication
-    protected void configure(HttpSecurity http) throws Exception {
 
-			http
-                .authorizeRequests()
-                .antMatchers("/api/**").hasAuthority("ADMIN").anyRequest()
-				.authenticated()
-                .and()
-                .csrf().disable()
-                .formLogin().disable();
-    }*/
 	
-	@Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-            .antMatchers("/api/livres").permitAll()
-            .antMatchers("/api/users").hasAuthority("ADMIN")
-            .anyRequest().fullyAuthenticated()
-            .and().httpBasic()
-            .and().csrf().disable();
-    }
+	//REST ENDPOINT  //HTTP Basic authentication
+	// @Override
+    // protected void configure(HttpSecurity http) throws Exception {
+        // http.authorizeRequests()
+            // .antMatchers("/api/livres").permitAll()
+            // .antMatchers("/api/users").hasAuthority("ADMIN")
+            // .anyRequest().fullyAuthenticated()
+            // .and().httpBasic()
+            // .and().csrf().disable();
+    // }
 	
 	
 	
