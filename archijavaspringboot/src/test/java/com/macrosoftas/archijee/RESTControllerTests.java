@@ -31,19 +31,20 @@ In this test, the full Spring application context is started, but without the se
  
  https://springbootdev.com/2018/02/22/spring-boot-test-writing-unit-tests-for-the-controller-layers-with-webmvctest/
 **/
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@AutoConfigureMockMvc
 public class RESTControllerTests {
 
-	@Autowired
-	private MockMvc mockMvc;
+	//@Autowired
+	//private MockMvc mockMvc;
 
 
 	//https://www.baeldung.com/rest-assured-authentication
 	
 	//https://github.com/rest-assured/rest-assured/wiki/usage  +++
 	
+	/*
 	@Test
 	public void testRestUsers()  {
 		
@@ -57,8 +58,9 @@ public class RESTControllerTests {
 		//.assertThat()
 		//.statusCode(HttpStatus.OK.value());
 		
-	}
+	}*/
 	
+	/*
 	@Test
 	public void testRestLivres()  {
 		
@@ -71,15 +73,16 @@ public class RESTControllerTests {
 		//.statusCode(HttpStatus.OK.value());
 		
 	}
+   */
 
-
-	
+	/*
 	 @Test
     public void shouldReturnisUnauthorized() throws Exception {
        // this.mockMvc.perform(get("/api/users")).andExpect(status().isOk());
 		
 		this.mockMvc.perform(get("/api/users")).andExpect(status().isUnauthorized());
     }
+	*/
 	
 	/*
 	@Test
